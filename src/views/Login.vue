@@ -14,7 +14,7 @@
     </div>
     <div>
       <label for="">
-        <button class="login--btn" @click="login()">Login</button>
+        <button class="login--btn" @click="auth">Login</button>
       </label>
     </div>
   </div>
@@ -29,8 +29,11 @@ export default {
     };
   },
   methods: {
-    async login() {
-      
+    auth() {
+      this.$store.dispatch("login", {
+        emial: this.email,
+        password: this.password
+      })
       
     }
   }

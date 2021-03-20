@@ -14,7 +14,7 @@
     </div>
     <div>
       <label for="">
-        <button class="register--btn" @click="register()">Register</button>
+        <button class="register--btn" @click="auth">Register</button>
       </label>
     </div>
   </div>
@@ -31,9 +31,17 @@ export default {
     };
   },
   methods: {
-    async register() {
-      axios.post()
+    auth() {
+      axios
+      .post("https://peaceful-sea-42439.herokuapp.com/api/register", {
+        email: this.email,
+        password: this.password
+      })
+      .catch(error => {
+        alert(error);
+      })
     }
+    
   }
 }
 </script>

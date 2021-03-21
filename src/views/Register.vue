@@ -33,7 +33,7 @@ export default {
   methods: {
     auth() {
       axios
-      .post("https://peaceful-sea-42439.herokuapp.com/api/register", {
+      .post("login-test-success.herokuapp.com/api/register", {
         email: this.email,
         password: this.password
       })

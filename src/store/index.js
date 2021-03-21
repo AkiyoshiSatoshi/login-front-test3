@@ -30,7 +30,7 @@ export default new Vuex.Store({
   actions: {
     async login ({ commit }, { email, password }) {
       const responseLogin = await axios.post(
-        "https://peaceful-sea-42439.herokuapp.com/api/login",
+        "https://login-test-success.herokuapp.com/api/login",
         {
           params: {
             email: email,
@@ -43,7 +43,7 @@ export default new Vuex.Store({
     },
     logout ({ commit }) {
       axios
-      .post("https://peaceful-sea-42439.herokuapp.com/api/login", {
+      .post("https://login-test-success.herokuapp.com/api/login", {
         aith: this.state.auth,
       })
       .then((response) => {

@@ -46,14 +46,14 @@ export default new Vuex.Store({
       .post("https://login-test-success.herokuapp.com/api/login", {
         aith: this.state.auth,
       })
-      .then((response) => {
-        console.log(response);
-        commit("logout", response.data.auth);
-        router.replace("/");
-      })
-        .catch((error) => {
-          console.log(error);
-      })
+      .then(function (response) {
+          console.log(response)
+          commit("logout", response.data.auth)
+          router.replace("/")
+        })
+        .catch(function (error) {
+            console.log(error)
+          })
       
     }
   },
